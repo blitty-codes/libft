@@ -26,4 +26,5 @@
     int ft_toupper(int);
     int ft_tolower(int);
     void *ft_calloc(size_t, size_t);
+    char *ft_strdup(const char *);
 #endif

@@ -46,7 +46,7 @@ int main()
 
     char *p = "Buenos dias";
     printf("strlen: %ld\nft_strlen: %ld\n", strlen(p), ft_strlen(p));
-*/
+
 
     // seguir buscando info
     char h[13] = "Hello ", hs[13] = "Hello ", *w = "world", *ws = "world";
@@ -55,7 +55,7 @@ int main()
 
     strcat(h, w);
     ft_strcat(hs, ws);
-    /*
+
     printf("strcat: %s\nft_strcat: %s\n", h, hs);
     printf("strchr: %p\nft_strchr: %p\n", strchr(h, 'w'), ft_strchr(h, 'w'));
     printf("strrchr: %p\nft_strrchr: %p\n", strrchr(h, 'l'), ft_strrchr(h, 'l'));
@@ -68,6 +68,38 @@ int main()
     printf("isprint: %d\nft_isisprint: %d\n", isprint(' '), ft_isprint(' '));
     printf("tolower: %d\nft_tolower: %d\n", tolower('R'), ft_tolower('R'));
     printf("toupper: %d\nft_istoupper: %d\n", toupper('z'), ft_toupper('z'));
-    */
+
+    int i,n;
+    int *pData, *pDataP;
+    printf("Amount of numbers to be entered: ");
+    scanf("%d",&i);
+    pData = (int*) calloc (i,sizeof(int));
+    pDataP = (int*) ft_calloc (i,sizeof(int));
+
+    if(pData==NULL) exit (1);
+    for(n=0;n<i;n++)
+    {
+        printf("Enter number #%d: ",n+1);
+        scanf("%d",&pData[n]);
+        pDataP[n] = pData[n];
+    }
+    printf("You have entered: ");
+    for(n=0;n<i;n++) printf("%d ",pData[n]);
+    printf("\n");
+    for(n=0;n<i;n++) printf("%d ",pDataP[n]);
+    printf("\n");
+    free(pData);
+    free(pDataP);
+*/
+
+    char *str = "Helloworld", *strS = "Helloworld";
+    char *result, *resultS;
+    result = ft_strdup(str);
+    resultS = ft_strdup(strS);
+    printf("The string : %s\n", result);
+    printf("The string : %s\n", resultS);
+    free(result);
+    free(resultS);
+
     return 0;
 }   

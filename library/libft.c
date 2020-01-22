@@ -91,7 +91,7 @@ char *ft_strchr(const char *s, int c)
 {
     while(*s!='\0' && *s!=(unsigned char) c)
         s++;
-    return (*s!=(unsigned char) c) ? NULL : s;   
+    return (*s!=(unsigned char) c) ? NULL : (char *) s;   
 }
 
 char *ft_strrchr(const char *s, int c)
@@ -157,6 +157,16 @@ int ft_tolower(int c)
     return (c>=65 && c <=90) ? c+32 : c;   
 }
 
-void *calloc(size_t nmemb, size_t size)
-{}
+void *ft_calloc(size_t nmemb, size_t size)
+{
+    return malloc(size*nmemb);
+}
 
+char *ft_strdup(const char *s)
+{
+    char *dupS = (char *) malloc(sizeof(s));
+    for(int i=0; i < ft_strlen(s); i++)
+        dupS[i] = s[i];
+
+    return dupS;
+}
